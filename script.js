@@ -8,7 +8,7 @@ if (num < 50) {
 }
 
 let name = "maria's";
-let resultCondition1 = "maria" ? "true" : "false";
+let resultCondition1 = "maria's" ? "true" : "false";
 console.log(resultCondition1);
 
 let el5 = 5;
@@ -29,4 +29,3 @@ switch (name2) {
   default:
     console.log(error);
 }
-
