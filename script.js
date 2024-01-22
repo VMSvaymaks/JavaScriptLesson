@@ -35,7 +35,7 @@ switch (name2) {
 let userAnswer = prompt("Please enter your username");
 
 if (userAnswer % 2 == 0) {
-  login("true");
+  console.log("true");
 } else {
   console.log("false");
 }
