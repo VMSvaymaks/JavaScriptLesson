@@ -13,14 +13,14 @@ console.log(resultSumNumbers);
 //----------------------------------------------------------------
 
 const secondSum = //[10, 50, 6, 7, 8, 11, 6, 3, 9] მაინტერესებს თუ შეიძლება ერთ ცვლადში მოვათავსო მასივი და ფუნქცია?
-  function secondSumFnc(numbers) {
+  function secondSum(numbers) {
     var sum = 0;
     for (const item of numbers) {
       sum += item;
     }
     return sum;
   };
-var resultSumNumbers = secondSumFnc([10, 50, 6, 7, 8, 11, 6, 3, 9]);
+var resultSumNumbers = secondSum([10, 50, 6, 7, 8, 11, 6, 3, 9]);
 console.log(resultSumNumbers);
 
 //----------------------------------------------------------------
@@ -41,7 +41,7 @@ console.log(resultSumNumbers);
 
 function getFullName(user) {
   if (user.isLoggedIn) {
-    return `${user.firstname} ${user.lastname}`;
+    return `${user.firstName} ${user.lastName}`;
   } else {
     return false;
   }
