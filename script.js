@@ -169,3 +169,61 @@ for (let index = 0; index < numArray5.length; index++) {
 console.log(5 == 5); // true
 console.log(5 == 5); // true
 console.log(5 === "5"); //false
+
+
+// Function
+
+let array4 = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let item of array4) {
+  sum += item;
+}
+console.log(sum);
+
+//---
+let user = {
+  userName: "anna",
+  userAge: 18,
+};
+
+let printName = user.userName + "are" + user.userAge + " years old";
+let printName2 = "${user.userName}are ${user.userAge} years old";
+console.log(printName2);
+
+//loop object
+let user2 = {
+  userName: "anna",
+  userAge: 18,
+};
+
+for (let key in user2) {
+  console.log(user2[key]);
+}
+
+// object.keys() object.value() object.entries()
+
+//--------------------------------
+
+//function decoration == hoisted
+function testFcn(x,y) {
+  return x+y;
+}
+let result = testFcn(15,54);
+console.log(result);
+
+//function expression == not hoisted
+let fnc2 = function () {
+  console.log("hello2");
+};
+
+fnc2();
+
+//function arrow == not hoisted
+let fnc3 = () => x + y;
+let resultFnc3 = fnc3(5,13);
+console.log(resultFnc3);
+
+
+//var ->> hoisted
+// let & const ->> not hoisted
+
