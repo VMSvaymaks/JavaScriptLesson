@@ -170,7 +170,6 @@ console.log(5 == 5); // true
 console.log(5 == 5); // true
 console.log(5 === "5"); //false
 
-
 // Function
 
 let array4 = [1, 2, 3, 4, 5];
@@ -205,10 +204,10 @@ for (let key in user2) {
 //--------------------------------
 
 //function decoration == hoisted
-function testFcn(x,y) {
-  return x+y;
+function testFcn(x, y) {
+  return x + y;
 }
-let result = testFcn(15,54);
+let result = testFcn(15, 54);
 console.log(result);
 
 //function expression == not hoisted
@@ -220,10 +219,42 @@ fnc2();
 
 //function arrow == not hoisted
 let fnc3 = () => x + y;
-let resultFnc3 = fnc3(5,13);
+let resultFnc3 = fnc3(5, 13);
 console.log(resultFnc3);
-
 
 //var ->> hoisted
 // let & const ->> not hoisted
 
+//----------------------------------------------------------------
+
+//scope
+//1. global
+
+//2. function on local
+
+//3. block
+
+//----
+
+function getAge(birthYear) {
+  let age = 2024 - birthYear;
+
+  function printAge() {
+    let info = `You are ${age}, born in ${birthYear}`;
+    console.log(info);
+  }
+  printAge();
+  return age;
+}
+let resultGerAge = getAge(2003);
+console.log(resultGerAge);
+
+//closure
+
+// method array
+
+//forEach
+// splice
+//slice
+//map
+//filter
