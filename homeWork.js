@@ -1,148 +1,103 @@
 "use strict";
 //1----------------------------------------------------------------
-let array = [14, 150, "css", null, "javascript", 25];
 
-let newArray = array.map((item) => {
-  if (typeof item === "number") {
-    return item * item;
-  } else if (typeof item === "string") {
-    return item.toUpperCase();
-  }
-  return item;
-});
-
-console.log(newArray);
+function checkHTTPS(link) {
+  return link.indexOf("https://") !== -1;
+}
+let link = "https://google.com";
+console.log(checkHTTPS(link));
 
 //2----------------------------------------------------------------
 
-let info = "good day";
-
-let word = info.slice(5);
-
-console.log(word);
+var div = document.createElement("div");
+div.setAttribute("class", "wrapper");
+div.setAttribute("id", "myWrapper");
+var img = document.createElement("img");
+img.setAttribute(
+  "src",
+  "https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg"
+);
+img.setAttribute("alt", "image");
+var h2 = document.createElement("h2");
+h2.setAttribute("class", "title");
+h2.textContent = "Perfect";
+h2.style.color = "red";
+h2.style.fontSize = "30px";
+div.appendChild(img);
+div.appendChild(h2);
+document.body.appendChild(div);
 
 //3----------------------------------------------------------------
 
-function stringLength(str) {
-  return str.length;
+function addParagraph(containerId, text) {
+  var container = document.getElementById(containerId);
+  var paragraph = document.createElement("p");
+  paragraph.setAttribute("class", "text");
+  paragraph.textContent = text;
+  container.appendChild(paragraph);
 }
-let length = stringLength("Hello, world, nice to me to");
-console.log(length);
+addParagraph("div1", "hello");
+addParagraph("div2", "hello");
+addParagraph("div3", "hello");
 
 //4----------------------------------------------------------------
 
-//testing
-//let name = prompt("Please enter your name:");
-//console.log("Hello, " + name + "!");
+let array = [-1, -2, -3, 4];
+let isPositive = array.some((num) => num > 0);
+console.log(isPositive);
 
-let userAnswer = prompt("საქართველოს დადაქალაქი?");
-let correctAnswer = "თბილისი";
-if (userAnswer !== null) {
-  userAnswer = userAnswer.trim().toLowerCase();
-  if (userAnswer === correctAnswer.toLowerCase()) {
-    console.log("სწორია");
-  } else {
-    console.log("არასწორია");
-  }
+//5----------------------------------------------------------------
+
+let str = "12345";
+let sum = 0;
+
+let array1 = str.split("");
+for (let i = 0; i < array1.length; i++) {
+  sum += parseInt(array1[i]);
 }
-
-//5---------------------------------------------------------------
-
-let fruits = ["apple", "mango", "avocado", "kiwi"];
-
-fruits.splice(-2, 1, "strawberry");
-console.log(fruits);
+console.log(sum);
 
 //6----------------------------------------------------------------
 
-let valueArray = [5, 25, 89, 120, 36];
+let numbers = [4, 55, 65, 8, 3];
+sum1 = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+console.log(sum1);
 
-valueArray.push("javaScript", "python");
-valueArray.unshift("HTML", "css");
-console.log(valueArray.length, valueArray);
+//----------------დამატებითად ძალიან დამაინტერესა ))-----------------------------\\
 
-valueArray.shift();
-valueArray.pop();
-console.log(valueArray.length, valueArray);
+function collatSequence(n) {
+  let steps = 0;
+  while (n !== 1) {
+    if (n % 2 === 0) {
+      n /= 2;
+    } else {
+      n = 3 * n + 1;
+    }
+    steps++;
+  }
+  return steps;
+}
 
-//7----------------------------------------------------------------
+function generateArray(start, end) {
+  const result = [];
+  for (let i = start; i <= end; i++) {
+    result.push(i);
+  }
+  return result;
+}
 
-let fruit = ["orange", "banana", "kiwi"];
+function applyCollat(array) {
+  const result = [];
+  array.forEach((num) => {
+    let steps = collatSequence(num);
+    result.push(steps);
+  });
+  return result;
+}
 
-console.log(fruit.length, fruit);
-
-fruit.push("apple", "pineapple");
-fruit.unshift("watermelon");
-
-console.log(fruit.length, fruit);
-fruit.splice(2, 0, "mango");
-
-fruit.shift();
-fruit.pop();
-console.log(fruit.length, fruit);
-
-//8----------------------------------------------------------------
-
-let array3 = [1, 2, 3, 4, 5];
-
-array3.splice(3, 0, "a", "b", "c");
-
-console.log(array3);
-
-//9----------------------------------------------------------------
-
-let array5 = [12, 25, 3, 6, 8, 14, 7, 23];
-
-let newArrayMap = array5.map((item) => item / 3);
-
-console.log(newArrayMap);
-
-//10----------------------------------------------------------------
-
-let array7 = [15, 100, 25, 10, 36];
-
-let filterArray7 = array7.filter((item) => item !== 10);
-
-console.log(filterArray7);
-
-//11----------------------------------------------------------------
-
-let array8 = [1, 2, 3 , 4 , 5];
-
-array8.splice(2, 1, "three");
-
-console.log(array8);
-
-//12----------------------------------------------------------------
-
-let array1 =["hello1", 14, 24, "hello2"];
-
-let number =  array1.filter((item) => typeof item !== "string");
-
-console.log(number);
-
-//13----------------------------------------------------------------
-
-let array4 = [1, 2, 3, 4, 5];
-let sum = 0;
-
-array4.forEach(item =>{
-  sum += item;
-});
-
-console.log(sum);
-
-//14----------------------------------------------------------------
-
-let languages = ['html', 'css', 'javascript', 'python', 'php'];
-
-let filteredLanguages = languages.filter(element => element.length > 3);
-console.log(filteredLanguages);
-
-//15----------------------------------------------------------------
-
-let words = ['Madrid', 'rome', 'Milan', 'berlin'];
-
-let filterWords = words.filter(word => word.includes('m') || word.includes('M'));
-
-console.log(filterWords);
+const myArray = generateArray(5, 104);
+const stepsArray = applyCollat(myArray);
+console.log(stepsArray);

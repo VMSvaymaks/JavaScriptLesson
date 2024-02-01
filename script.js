@@ -258,3 +258,110 @@ console.log(resultGerAge);
 //slice
 //map
 //filter
+
+//----------------------------------------------------------------
+
+// LESSON  5 ----------------
+// reverse
+let array = ["banana", "apple", "mango"];
+array.reverse();
+console.log(array);
+
+// indexOf
+
+let array2 = ["banana", "apple", "mango"];
+console.log(array2.indexOf("apple"));
+
+//every & some / true & false
+let array3 = [100, 5, 15, 36, 100].every((number) => number < 100);
+
+let condition = (number) => number < 110;
+
+let result1 = array3.some(condition);
+console.log(result1);
+
+//concat
+let names1 = ["pomeranian", "pineapple", "mango"];
+let names2 = ["banana", "apple", "targum"];
+let allNames = names2.concat(names1);
+console.log(allNames);
+
+//reduce
+let arrayReduce = [
+  [0, 1],
+  [2, 3],
+  [4, 5],
+].reduce(function (accumulator, currentValue) {
+  return accumulator.concat(currentValue);
+}, []);
+
+//[].concat([0,1]) => [0, 1];
+//[0,1].concat([2,3]) => [0, 1, 2, 3]
+//[0,1,2,3].concat([4,5]) => [0, 1, 2, 3, 4, 5]
+
+console.log(arrayReduce); //[0, 1, 2, 3, 4, 5]
+
+//----------------------------------------------------------------
+//  string methods
+
+let value = "hello";
+
+console.log(value.length);
+console.log(value.endsWith('o'));
+console.log(value.startsWith('h'));
+console.log(value.includes('a'));
+console.log(value.toUpperCase());
+console.log(value.toLowerCase());
+console.log(value.trim());
+
+
+let value2 = "hello";
+
+console.log(value2.indexOf('l'));
+console.log(value2.lastIndexOf('l'));
+console.log(value2.indexOf('a'));
+
+console.log(value2.charAt(1));
+console.log(value2.charAt(value2.length -1));
+
+
+// slice
+let value3 = "hello";
+
+console.log(value3.slice(1,3));
+console.log(value3.substring(1,3));
+
+//split
+let stringValue = "abcd";
+console.log(stringValue.split(""));
+
+
+//----
+let numbers = '123456789';
+let numResult1 = numbers.split("").reverse().join("");
+console.log(numResult1);
+
+//--------------------------------
+let text = 'I\'m 30 years old';
+let text2 = "I like \"name\" ";
+console.log(text2);
+
+
+// DOM
+
+//console.log(newElementJs);
+//Document.body.appendChild(newElementJs);
+
+document.getElementsById('wrapper').appendChild(newElementJs);
+let newElementJs = document.createElement('p');
+
+let newDIvElement = document.createElement('div');
+newDIvElement.classList.add('container');
+
+let link = Document.createElement('a');
+link.setAttribute('href', 'https://google.com');
+link.setAttribute('target', '_blank');
+
+
+document.querySelector('wrapper').appendChild(link);
+document.querySelectorAll('wrapper').appendChild(link);
