@@ -66,10 +66,9 @@ Fnc2();
 // 3. arrow function -> not hoisted
 
 let Fnc3 = (x, y) => x + y;
-{
-  let resultFnc3 = Fnc3(4, 10);
-  console.log(resultFnc3);
-}
+
+let resultFnc3 = Fnc3(4, 10);
+console.log(resultFnc3);
 
 // var -> hoisted
 //let & const -> not hoisted
